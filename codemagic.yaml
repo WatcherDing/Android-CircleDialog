@@ -7,6 +7,9 @@ workflows:
       - name: Set Android SDK location
         script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+      - name: Print Java version
+        script: |
+          java -version
       - name: Grant execute permissions to gradlew
         script: |
           chmod +x gradlew
