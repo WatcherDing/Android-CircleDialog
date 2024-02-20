@@ -5,6 +5,9 @@ workflows:
     instance_type: mac_mini_m1
     scripts:
       - name: Set Android SDK location
+        script: | 
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+      - name: Set Android SDK location
         script: |
           ./gradlew bundleRelease # -> to create the .aab
     artifacts:
